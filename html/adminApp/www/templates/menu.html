@@ -1,0 +1,48 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <!-- Main Content -->
+  <ion-side-menu-content>
+      <ion-nav-bar class="bar-assertive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="left">
+           <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+           </button>
+      </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-assertive">
+        <h1 class="title">{{currentUser.username}}</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="row">
+        <div class="col col-33 col-offset-33">
+          <span class="step size-96">
+            <button class="button button-outline button-dark ion-ios-person dark"></button>
+          </span>
+        </div>
+      </div>
+
+      <ion-list>        
+        <ion-item ng-show="showAddPharmacy" menu-close class="item-icon-right" href="#/app/clients">
+          <i class="icon ion-ios-people"></i> Clients
+        </ion-item>
+        
+        <ion-item ng-show="showAddDriver" menu-close class="item-icon-right" href="#/app/employees" >
+          <i class="icon ion-ios-people"></i> Employees 
+        </ion-item>
+        
+        <ion-item menu-close class="item-icon-right" href="#/app/playlists">
+          <i class="icon ion-stats-bars"></i> Daily Stats
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-right assertive" ng-click="logout()">
+          <i class="icon ion-log-out"></i>Logout
+        </ion-item> 
+      
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
